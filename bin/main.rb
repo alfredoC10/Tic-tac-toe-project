@@ -1,5 +1,5 @@
-#!/usr/bin/env ruby
 # rubocop:disable Lint/UselessAssignment
+#!/usr/bin/env ruby
 # To get players information
 puts 'Please insert the name of player A'
 player_a = gets.chomp
