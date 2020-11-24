@@ -1,8 +1,16 @@
 #!/usr/bin/env ruby
+<<<<<<< HEAD
 board = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 puts board[0] + " | " + board[1] + ' | ' + board[2]
 puts board[3] + " | " + board[4] + ' | ' + board[5]
 puts board[6] + " | " + board[7] + ' | ' + board[8]
+=======
+# To get players information
+# rubocop:disable Lint/UselessAssignment
+puts 'Please insert the name of player A'
+player_a = gets.chomp
+puts 'Player A uses symbol: X'
+>>>>>>> 5c40fab91c982510fbfffbd1dcfc6b50468efb18
 
 def handle_turn
   board = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
