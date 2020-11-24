@@ -41,5 +41,4 @@ def handle_turn
     puts "\nInvalid character, Please select Y or N"
   end
 end
-
 handle_turn
