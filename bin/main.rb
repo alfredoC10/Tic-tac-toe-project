@@ -1,68 +1,47 @@
-# rubocop:disable Lint/UselessAssignment
 #!/usr/bin/env ruby
-# To get players information
-puts 'Please insert the name of player A'
-player_a = gets.chomp
-puts 'Player A uses symbol: X'
+board = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+puts board[0] + " | " + board[1] + ' | ' + board[2]
+puts board[3] + " | " + board[4] + ' | ' + board[5]
+puts board[6] + " | " + board[7] + ' | ' + board[8]
 
-puts 'Please insert the name of player B'
-player_b = gets.chomp
-puts 'Player A uses symbol: O'
-puts 'Player A, is your turn, write "X" in the available spaces'
-#             |              |
-#       _     |       _      |     _
-# ___________1|_____________2|____________3
-#             |              |
-#       _     |       _      |     _
-# ___________4|_____________5|____________6
-#             |              |
-#       _     |       _      |     _
-#            7|             8|            9
-puts 'Your move is not valid, please choose another available space'
-puts 'Your move is valid, please choose another available space'
-#             |              |
-#       X     |       _      |     _
-# ___________1|_____________2|____________3
-#             |              |
-#       _     |       _      |     _
-# ___________4|_____________5|____________6
-#             |              |
-#       _     |       _      |     _
-#            7|             8|            9
-puts 'Player B, is your turn, write "O" in the available spaces'
-#             |              |
-#       X     |       _      |     _
-# ___________1|_____________2|____________3
-#             |              |
-#       O     |       _      |     _
-# ___________4|_____________5|____________6
-#             |              |
-#       _     |       _      |     _
-#            7|             8|            9
-puts 'Your move is not valid, please choose another available space'
-puts 'Your move is valid, please choose another available space'
-#             |              |
-#       X     |       X      |     X
-# ___________1|_____________2|____________3
-#             |              |
-#       O     |       O      |     _
-# ___________4|_____________5|____________6
-#             |              |
-#       _     |       _      |     _
-#            7|             8|            9
-puts 'Player A won!'
-puts 'Would you like to play again? Y/N'
-new_game = gets.chomp
+def handle_turn
+  board = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+  puts "\nLet's start to play"
+  puts "\nPlayer 1 please select a position from 1 to 9\n"
+  position_a = gets.chomp.to_i
+  board.insert(position_a - 1, "X")
+  puts "    " + board[0] + " | " + board[1] + ' | ' + board[2]
+  puts "    " + board[3] + " | " + board[4] + ' | ' + board[5]
+  puts "    " + board[6] + " | " + board[7] + ' | ' + board[8]
+  puts "\nPlayer 2 please select a position from 1 to 9\n"
+  position_b = gets.chomp.to_i
+  if position_a == position_b
+    puts "\nInvalid movement, please select a position from 1 to 9\n\n"
+    position_b = gets.chomp.to_i
+  
+    board.insert(position_a - 1, "O")
+    puts "    " + board[0] + " | " + board[1] + ' | ' + board[2]
+    puts "    " + board[3] + " | " + board[4] + ' | ' + board[5]
+    puts "    " + board[6] + " | " + board[7] + ' | ' + board[8]
+  else
+    board.insert(position_a - 1, "O")
+    puts "    " + board[0] + " | " + board[1] + ' | ' + board[2]
+    puts "    " + board[3] + " | " + board[4] + ' | ' + board[5]
+    puts "    " + board[6] + " | " + board[7] + ' | ' + board[8]
+  end
+  puts "\nPlayer 2 won!"
+  puts "\nWould you like to restart the game \"Y\"/\"N\""
+  replay = gets.chomp.upcase
+  if replay == "Y"
+    puts "\nLet's play again"
+    puts board[0] + " | " + board[1] + ' | ' + board[2]
+    puts board[3] + " | " + board[4] + ' | ' + board[5]
+    puts board[6] + " | " + board[7] + ' | ' + board[8]
+  elsif replay == "N"
+    puts "\nGame over"
+  else
+    puts "\nInvalid character, Please select Y or N"
+  end
+end
 
-#             |              |
-#       _     |       _      |     _
-# ___________1|_____________2|____________3
-#             |              |
-#       _     |       _      |     _
-# ___________4|_____________5|____________6
-#             |              |
-#       _     |       _      |     _
-#            7|             8|            9
-puts 'You selected not to play again, thanks for playing!'
-
-# rubocop:enable Lint/UselessAssignment
+handle_turn
