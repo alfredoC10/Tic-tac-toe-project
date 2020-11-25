@@ -1,44 +1,81 @@
 #!/usr/bin/env ruby
-board = %w[1 2 3 4 5 6 7 8 9]
-puts "#{board[0]} | #{board[1]} | #{board[2]}"
-puts "#{board[3]} | #{board[4]} | #{board[5]}"
-puts "#{board[6]} | #{board[7]} | #{board[8]}"
+board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+winners = [ [board[0], board[1], board[2]], [board[3], board[4], board[5]], 
+            [board[6], board[7], board[8]], [board[0], board[3], board[6]],
+            [board[1], board[4], board[7]], [board[2], board[5], board[8]],
+            [board[0], board[4], board[8]], [board[2], board[4], board[6]] ]
 
-def handle_turn
-  board = %w[1 2 3 4 5 6 7 8 9]
-  puts "\nLet's start to play"
-  puts "\nPlayer 1 please select a position from 1 to 9\n"
-  position_a = gets.chomp.to_i
-  board.delete_at(position_a - 1)
-  board.insert(position_a - 1, 'X')
-  puts "    #{board[0]} | #{board[1]} | #{board[2]}"
-  puts "    #{board[3]} | #{board[4]} | #{board[5]}"
-  puts "    #{board[6]} | #{board[7]} | #{board[8]}"
-  puts "\nPlayer 2 please select a position from 1 to 9\n"
-  position_b = gets.chomp.to_i
-  if position_a == position_b
-    puts "\nInvalid movement, please select a position from 1 to 9\n\n"
-    position_b = gets.chomp.to_i
-  end
-  board.delete_at(position_b - 1)
-  board.insert(position_b - 1, 'O')
-  puts "    #{board[0]} | #{board[1]} | #{board[2]}"
-  puts "    #{board[3]} | #{board[4]} | #{board[5]}"
-  puts "    #{board[6]} | #{board[7]} | #{board[8]}"
-  puts "\nPlayer 2 won!"
-  puts "\nWould you like to restart the game \"Y\"/\"N\""
-  replay = gets.chomp.upcase
-  case replay
-  when 'Y'
-    puts "\nLet's play again "
-    board = %w[1 2 3 4 5 6 7 8 9]
-    puts "#{board[0]} | #{board[1]} | #{board[2]}"
-    puts "#{board[3]} | #{board[4]} | #{board[5]}"
-    puts "#{board[6]} | #{board[7]} | #{board[8]}"
-  when 'N'
-    puts "\nGame over"
+def display(board)
+  puts "      #{board[0]} | #{board[1]} | #{board[2]} "
+  puts "      -----------"
+  puts "      #{board[3]} | #{board[4]} | #{board[5]} "
+  puts "      -----------"
+  puts "      #{board[6]} | #{board[7]} | #{board[8]} "
+end
+
+display(board)
+
+def move(board, position, player = "X")
+  board.delete_at(position - 1)
+  board[position.to_i-1] = player
+end
+
+def position_empty?(board, position)
+  board[position.to_i-1] != 'X' && board[position.to_i-1] != 'O'
+end
+
+def valid_movements?(board, position)
+  position.to_i.between?(1..9) && position_empty?(board, position)
+end
+
+def handle_turn(board)
+  puts "\nPlease select a position from 1 to 9\n"
+  position = gets.chomp.to_i
+  if valid_movements?(board, position)
+  move(board, position, current_player(board)) && display(board)
   else
-    puts "\nInvalid character, Please select Y or N"
+  puts "Invalid movement"
+  handle_turn(board)
   end
 end
-handle_turn
+
+def turn_counter(board)
+  count = 0
+board.each do |move|
+"#{move}" == "X" || "#{move}" == "O"
+count += 1
+end
+  return count
+end
+
+def current_player(board)
+  turn_counter(board).even  ? 'X' : 'O'
+end
+
+def winners(board)
+  winner = ""
+  if winners.include?(['X', 'X', 'X'])
+     winner = "Player_1"
+  elsif winners.include?(['O', 'O', 'O'])
+    winner = "Player_2"
+  else
+      winner = "None"
+  end
+  winner
+end
+
+def game_over?(board)
+  (winners(board) ==  "Player_1" || winners(board) ==  "Player_2") || 
+end
+
+
+def playing(board)
+  until game_over?(board)
+    handle_turn(board)
+  end
+  if 
+  end
+
+
+
+end
