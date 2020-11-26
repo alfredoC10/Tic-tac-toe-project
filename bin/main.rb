@@ -39,6 +39,8 @@ def handle_turn(board)
   end
 end
 
+handle_turn
+
 def turn_counter(board)
   count = 0
 board.each do |move|
