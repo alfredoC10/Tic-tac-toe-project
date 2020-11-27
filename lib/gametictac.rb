@@ -1,21 +1,30 @@
 # rubocop:disable Metrics/CyclomaticComplexity
 # rubocop:disable Metrics/PerceivedComplexity
+class Gamer
+  attr_reader :symbol
+
+  def initialize(symbol)
+    @symbol = symbol
+  end
+end
+
 class Tictactoe
   attr_reader :board
 
-  def initialize()
-    @symbol1 = 'X'
-    @symbol2 = 'O'
+  def initialize(symbol)
+    @symbol1 = Gamer.new(symbol)
+    @symbol2 = Gamer.new(symbol == 'X' ? 'O' : 'X')
     @board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
     @turn = true
   end
 
   def display
-    puts "        #{board[0]} | #{board[1]} | #{board[2]} "
-    puts '      -------------'
-    puts "        #{board[3]} | #{board[4]} | #{board[5]} "
-    puts '      -------------'
-    puts "        #{board[6]} | #{board[7]} | #{board[8]} "
+    lineone = "        #{board[0]} | #{board[1]} | #{board[2]} "
+    linetwo = '      -------------'
+    linethree = "        #{board[3]} | #{board[4]} | #{board[5]} "
+    linefour = '      -------------'
+    lineafive = "        #{board[6]} | #{board[7]} | #{board[8]} "
+    "#{lineone}\n#{linetwo}\n#{linethree}\n#{linefour}\n#{lineafive}"
   end
 
   def valid_movements?(position)
@@ -23,13 +32,8 @@ class Tictactoe
   end
 
   def move(position)
-    board[position.to_i - 1] = @turn ? @symbol1 : @symbol2
+    board[position.to_i - 1] = @turn ? @symbol1.symbol : @symbol2.symbol
     @turn = !@turn
-    if @turn == false
-      puts "Last symbol played 'X'\n"
-    else
-      puts "Last symbol played 'O'\n"
-    end
   end
 
   def full?
@@ -37,23 +41,23 @@ class Tictactoe
   end
 
   def win?
-    if board[0] == @symbol1 && board[1] == @symbol1 && board[2] == @symbol1 ||
-       board[3] == @symbol1 && board[4] == @symbol1 && board[5] == @symbol1 ||
-       board[6] == @symbol1 && board[7] == @symbol1 && board[8] == @symbol1 ||
-       board[0] == @symbol1 && board[3] == @symbol1 && board[6] == @symbol1 ||
-       board[1] == @symbol1 && board[4] == @symbol1 && board[7] == @symbol1 ||
-       board[2] == @symbol1 && board[5] == @symbol1 && board[8] == @symbol1 ||
-       board[0] == @symbol1 && board[4] == @symbol1 && board[8] == @symbol1 ||
-       board[2] == @symbol1 && board[4] == @symbol1 && board[6] == @symbol1
+    if board[0] == 'X' && board[1] == 'X' && board[2] == 'X' ||
+       board[3] == 'X' && board[4] == 'X' && board[5] == 'X' ||
+       board[6] == 'X' && board[7] == 'X' && board[8] == 'X' ||
+       board[0] == 'X' && board[3] == 'X' && board[6] == 'X' ||
+       board[1] == 'X' && board[4] == 'X' && board[7] == 'X' ||
+       board[2] == 'X' && board[5] == 'X' && board[8] == 'X' ||
+       board[0] == 'X' && board[4] == 'X' && board[8] == 'X' ||
+       board[2] == 'X' && board[4] == 'X' && board[6] == 'X'
       'X won!'
-    elsif board[0] == @symbol2 && board[1] == @symbol2 && board[2] == @symbol2 ||
-          board[3] == @symbol2 && board[4] == @symbol2 && board[5] == @symbol2 ||
-          board[6] == @symbol2 && board[7] == @symbol2 && board[8] == @symbol2 ||
-          board[0] == @symbol2 && board[3] == @symbol2 && board[6] == @symbol2 ||
-          board[1] == @symbol2 && board[4] == @symbol2 && board[7] == @symbol2 ||
-          board[2] == @symbol2 && board[5] == @symbol2 && board[8] == @symbol2 ||
-          board[0] == @symbol2 && board[4] == @symbol2 && board[8] == @symbol2 ||
-          board[2] == @symbol2 && board[4] == @symbol2 && board[6] == @symbol2
+    elsif board[0] == 'O' && board[1] == 'O' && board[2] == 'O' ||
+          board[3] == 'O' && board[4] == 'O' && board[5] == 'O' ||
+          board[6] == 'O' && board[7] == 'O' && board[8] == 'O' ||
+          board[0] == 'O' && board[3] == 'O' && board[6] == 'O' ||
+          board[1] == 'O' && board[4] == 'O' && board[7] == 'O' ||
+          board[2] == 'O' && board[5] == 'O' && board[8] == 'O' ||
+          board[0] == 'O' && board[4] == 'O' && board[8] == 'O' ||
+          board[2] == 'O' && board[4] == 'O' && board[6] == 'O'
       'O won!'
     else
       'No winner'
