@@ -33,11 +33,11 @@ inside the 'lib' directory, this file is linked to the main file. We created an 
 4.- The next turn is for "O", player 2 selects any available position from 1 to 9. Again, it would be the turn for X.
 5.- A player wins when the same symbol is written in a 3-position-row/column/diagonal. For example:
 
-	 X | X | X          X |   |              X |   |   
-	-----------	       -----------         ------------
-	   |   |  	          | X |              X |   |  
-	----------- 	     -----------         ------------
-	   |   |  	          |   | X	           X |   |  
+	 X | X | X          X |   |            X |   |   
+	-----------       -------------       -------------
+	   |   |              | X |            X |   |  
+	-----------       -------------       -------------
+	   |   |              |   | X          X |   |  
 
 6.- A tied game takes place when all de positions are full and there aren't three consecutive symbols. For example:
 
