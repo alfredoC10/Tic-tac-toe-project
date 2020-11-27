@@ -1,5 +1,6 @@
 # Tic-tac-toe-project
-this is milestone 1 project setup. We create directories lib, bin and setup the linters in order to setup the Tic Tac Toe project.
+This is milestone 3 game logic; at this point all the pieces of the game were developed and assambled. We count with our main class 'Tictactoe', which can be found inside a separate file that is
+inside the 'lib' directory, this file is linked to the main file. We created an instance of that class, so different methods can be call on it to execute the different functions of the game.
 
 ## Built With
 - Rubocop
