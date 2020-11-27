@@ -18,3 +18,4 @@ until tctc.win? == 'X won!' || tctc.win? == 'O won!' || tctc.full? == true
 end
 
 puts "#{tctc.win?}  GAME OVER" if tctc.win? == 'X won!' || tctc.win? == 'O won!' || tctc.full? == true
+puts tctc.display

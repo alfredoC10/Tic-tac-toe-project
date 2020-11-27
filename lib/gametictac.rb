@@ -25,6 +25,11 @@ class Tictactoe
   def move(position)
     board[position.to_i - 1] = @turn ? @symbol1 : @symbol2
     @turn = !@turn
+    if @turn == false
+      puts "Last symbol played 'X'\n"
+    else
+      puts "Last symbol played 'O'\n"
+    end
   end
 
   def full?
