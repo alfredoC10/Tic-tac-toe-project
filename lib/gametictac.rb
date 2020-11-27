@@ -1,10 +1,3 @@
-class Gamer
-    attr_reader :symbol
-    def initialize()
-        @symbol = symbol
-    end
-end
-
 class Tictactoe
     attr_reader :board
     def initialize()
@@ -31,26 +24,34 @@ class Tictactoe
         @turn = !@turn
       end
 
-      def full?(board)
-      board.none? == " "
+      def full?
+      board.none? " "
       end
-    
-  winners = [ [board[0], board[1], board[2]], [board[3], board[4], board[5]], 
-      [board[6], board[7], board[8]], [board[0], board[3], board[6]],
-      [board[1], board[4], board[7]], [board[2], board[5], board[8]],
-      [board[0], board[4], board[8]], [board[2], board[4], board[6]] ]
-      
-      def win?(board)
+
+      def win?
         winner = ""
-        if winners.include?(['X', 'X', 'X'])
-           winner = "Player_1"
-        elsif winners.include?(['O', 'O', 'O'])
-          winner = "Player_2"
+        if board[0] == @symbol1 && board[1] == @symbol1 && board[2] == @symbol1 ||
+           board[3] == @symbol1 && board[4] == @symbol1 && board[5] == @symbol1 ||
+           board[6] == @symbol1 && board[7] == @symbol1 && board[8] == @symbol1 ||
+           board[0] == @symbol1 && board[3] == @symbol1 && board[6] == @symbol1 ||
+           board[1] == @symbol1 && board[4] == @symbol1 && board[7] == @symbol1 ||
+           board[2] == @symbol1 && board[5] == @symbol1 && board[8] == @symbol1 ||
+           board[0] == @symbol1 && board[4] == @symbol1 && board[8] == @symbol1 ||
+           board[2] == @symbol1 && board[4] == @symbol1 && board[6] == @symbol1
+           winner = 'X won!'
+        elsif
+          board[0] == @symbol2 && board[1] == @symbol2 && board[2] == @symbol2 ||
+          board[3] == @symbol2 && board[4] == @symbol2 && board[5] == @symbol2 ||
+          board[6] == @symbol2 && board[7] == @symbol2 && board[8] == @symbol2 ||
+          board[0] == @symbol2 && board[3] == @symbol2 && board[6] == @symbol2 ||
+          board[1] == @symbol2 && board[4] == @symbol2 && board[7] == @symbol2 ||
+          board[2] == @symbol2 && board[5] == @symbol2 && board[8] == @symbol2 ||
+          board[0] == @symbol2 && board[4] == @symbol2 && board[8] == @symbol2 ||
+          board[2] == @symbol2 && board[4] == @symbol2 && board[6] == @symbol2
+          winner = 'O won!'
         else
-            winner = "None"
+          winner = 'No winner'
         end
         winner
-      end
-    
+      end 
 end
-
