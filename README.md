@@ -20,24 +20,17 @@ inside the 'lib' directory, this file is linked to the main file. We created an 
 - step 4: Open the "Tic-tac-toe-project" directory in the terminal (do cd Tic-tac-toe-project)
 - step 5: Type bin/main.rb
 - step 6: "X" plays first, so now player 1 selects a number from 1 to 9, which corresponds with the position in the board as shown:
+
 	<img src="https://github.com/Huemac-Alfredo/Tic-tac-toe-project/blob/readme_game_instructions/images/board_numbers.PNG" width="100px">
 
 - step 7: The next turn is for "O", player 2 selects any available position from 1 to 9. Again, it would be the turn for X.
 - step 8: A player wins when the same symbol is written in a 3-position-row/column/diagonal. For example:
 
-	 X | X | X          X |   |            X |   |   
-	-----------       -------------       -------------
-	   |   |              | X |            X |   |  
-	-----------       -------------       -------------
-	   |   |              |   | X          X |   |  
+  <img src="https://github.com/Huemac-Alfredo/Tic-tac-toe-project/blob/readme_game_instructions/images/winner_combinations.PNG" height="100px">
 
 - step 9: A tied game takes place when all de positions are full and there aren't three consecutive symbols. For example:
 
-	 X | O | X
-	-----------
-	 O | O | X
-	-----------
-	 X | X | O
+  <img src="https://github.com/Huemac-Alfredo/Tic-tac-toe-project/blob/readme_game_instructions/images/tied_game.PNG" width="100px">
 
 - step 10: To play again, type again bin/main.rb
 
