@@ -1,5 +1,5 @@
 # Tic-tac-toe-project
-This project consisted in programming the famous Tic Tac Toe game so that users can play directly in their OS terminal. It was an asignment to us to learn how to use Ruby's OOP elements in a logic sequence.
+This project consisted in programming the famous Tic Tac Toe game so that users can play directly in their OS terminal. It was an assignment to us to learn how to use Ruby's OOP elements in a logic sequence.
 The development of this project was distributed along 4 milestones, which are listed here:
 - Setting up project resources
 - Designing user interface
