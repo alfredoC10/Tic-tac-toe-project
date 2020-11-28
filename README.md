@@ -32,12 +32,6 @@ inside the 'lib' directory, this file is linked to the main file. We created an 
 
   <img src="https://github.com/Huemac-Alfredo/Tic-tac-toe-project/blob/readme_game_instructions/images/tied_game.PNG" width="100px">
 
-	 X | O | X
-	-----------
-	 O | O | X
-	-----------
-	 X | X | O
-
 - step 10: To play again, type again bin/main.rb
 
 ## Authors
