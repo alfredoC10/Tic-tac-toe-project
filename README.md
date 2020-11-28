@@ -20,12 +20,7 @@ inside the 'lib' directory, this file is linked to the main file. We created an 
 - step 4: Open the "Tic-tac-toe-project" directory in the terminal (do cd Tic-tac-toe-project)
 - step 5: Type bin/main.rb
 - step 6: "X" plays first, so now player 1 selects a number from 1 to 9, which corresponds with the position in the board as shown:
-	
-	 1 | 2 | 3
-	-----------
-	 4 | 5 | 6
-	-----------
-	 7 | 8 | 9
+	<img src="https://github.com/Huemac-Alfredo/Tic-tac-toe-project/blob/readme_game_instructions/images/board_numbers.PNG" width="60px">
 
 - step 7: The next turn is for "O", player 2 selects any available position from 1 to 9. Again, it would be the turn for X.
 - step 8: A player wins when the same symbol is written in a 3-position-row/column/diagonal. For example:
