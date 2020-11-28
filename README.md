@@ -30,7 +30,7 @@ inside the 'lib' directory, this file is linked to the main file. We created an 
 
 - step 9: A tied game takes place when all de positions are full and there aren't three consecutive symbols. For example:
 
-  <img src="https://github.com/Huemac-Alfredo/Tic-tac-toe-project/blob/readme_game_instructions/images/tied_game_.PNG" width="100px">
+  <img src="https://github.com/Huemac-Alfredo/Tic-tac-toe-project/blob/readme_game_instructions/images/tied_game_.PNG" height="110px">
 
 - step 10: To play again, type again bin/main.rb
 
