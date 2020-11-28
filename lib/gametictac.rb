@@ -42,7 +42,9 @@ class Tictactoe
 
   def win?
     winner = !@turn ? @symbol1.symbol : @symbol2.symbol
-    if (board[0..2] || board[3..5] || board[6..8]).all?(winner) ||
+    if board[0..2].all?(winner) || 
+       board[3..5].all?(winner) ||
+       board[6..8].all?(winner) ||
        [board[0], board[3], board[6]].all?(winner) ||
        [board[1], board[4], board[7]].all?(winner) ||
        [board[2], board[5], board[8]].all?(winner) ||
