@@ -19,6 +19,6 @@ until tctc.win? == 'X won!' || tctc.win? == 'O won!' || tctc.full? == true
     puts "\nPlease select a position from 1 to 9\n"
   end
 end
-puts tctc.last_movement
+#puts tctc.last_movement
 puts "#{tctc.win?}  GAME OVER" if tctc.win? == 'X won!' || tctc.win? == 'O won!' || tctc.full? == true
 puts tctc.display
