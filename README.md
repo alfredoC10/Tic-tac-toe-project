@@ -10,10 +10,6 @@ The development of this project was distributed along 4 milestones, which are li
 - Rubocop
 - Visual Studio Code
 
-## Live Demo
-
-[Live Demo Link]()
-
 ## Game instructions and rules
 - step 1: start using a Browser of your choice (Google Chrome, Mozilla Firefox, Safari or any other browser)
 
