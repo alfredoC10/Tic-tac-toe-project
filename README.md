@@ -26,51 +26,20 @@ The development of this project was distributed along 4 milestones, which are li
 - step 6: The game is played only by 2 persons. They have to take turns
 - step 7: "X" plays first, so now player 1 selects a number from 1 to 9, which corresponds with the position in the board as shown:
 
-	<img src="https://github.com/Huemac-Alfredo/Tic-tac-toe-project/blob/readme_game_instructions/images/board_numbers.PNG" width="100px">
+	<img src="https://github.com/Huemac-Alfredo/Tic-tac-toe-project/blob/development/images/board_numbers.PNG" width="100px">
 
 - step 8: The next turn is for "O", player 2 selects any available position from 1 to 9. Again, it would be the turn for X.
 - step 9: A player wins when the same symbol is written in a 3-position-row/column/diagonal. For example:
 
-  <img src="https://github.com/Huemac-Alfredo/Tic-tac-toe-project/blob/readme_game_instructions/images/winner_combinations.PNG" height="100px">
+  <img src="https://github.com/Huemac-Alfredo/Tic-tac-toe-project/blob/development/images/winner_combinations.PNG" height="100px">
 
 - step 10: A tied game takes place when all de positions are full and there aren't three consecutive symbols. For example:
 
-  <img src="https://github.com/Huemac-Alfredo/Tic-tac-toe-project/blob/readme_game_instructions/images/tied_game_.PNG" height="110px">
+  <img src="https://github.com/Huemac-Alfredo/Tic-tac-toe-project/blob/development/images/tied_game_.PNG" height="110px">
 
 - step 11: It is not allowed to select a number tha has been chosen before
 
 - step 12: To play again, type again bin/main.rb
-
-## Game instructions
-
-1.- Open the "Tic-tac-toe-project" directory in the terminal
-2.- Type bin/main.rb
-3.- "X" plays first, so now player 1 selects a number from 1 to 9, which corresponds with the position in the board as shown:
-	
-	 1 | 2 | 3
-	-----------
-	 4 | 5 | 6
-	-----------
-	 7 | 8 | 9
-
-4.- The next turn is for "O", player 2 selects any available position from 1 to 9. Again, it would be the turn for X.
-5.- A player wins when the same symbol is written in a 3-position-row/column/diagonal. For example:
-
-	 X | X | X          X |   |            X |   |   
-	-----------       -------------       -------------
-	   |   |              | X |            X |   |  
-	-----------       -------------       -------------
-	   |   |              |   | X          X |   |  
-
-6.- A tied game takes place when all de positions are full and there aren't three consecutive symbols. For example:
-
-	 X | O | X
-	-----------
-	 O | O | X
-	-----------
-	 X | X | O
-
-7.- To play again, type again bin/main.rb
 
 ## Authors
 
